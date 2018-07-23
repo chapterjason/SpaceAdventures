@@ -1,5 +1,5 @@
 /*
- * This file is part of the Kernel package.
+ * This file is part of the SpaceAdventures package.
  *
  * (c) Jason Schilling <jason.schilling@sourecode.de>
  *
@@ -31,7 +31,7 @@ namespace SoureCode {
 
         void DebugDraw::DrawPolygon(const b2Vec2 *vertices, int32 vertexCount, const b2Color &color) {
             sf::ConvexShape polygon(static_cast<size_t>(vertexCount));
-            sf::Vector2f center;
+//            sf::Vector2f center;
 
             for (int i = 0; i < vertexCount; i++) {
                 //polygon.setPoint(i, SFMLDraw::Box2DVecToSFMLVec(vertices[i]));

@@ -1,5 +1,5 @@
 /*
- * This file is part of the Kernel package.
+ * This file is part of the SpaceAdventures package.
  *
  * (c) Jason Schilling <jason.schilling@sourecode.de>
  *

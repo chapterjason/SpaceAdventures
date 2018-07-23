@@ -1,5 +1,5 @@
 /*
- * This file is part of the Kernel package.
+ * This file is part of the SpaceAdventures package.
  *
  * (c) Jason Schilling <jason.schilling@sourecode.de>
  *
@@ -22,6 +22,8 @@ namespace SpaceAdventures {
 
             public:
                 LoadState(Core::Game *game);
+
+
 
                 void draw(sf::RenderWindow *window) override;
 

@@ -1,5 +1,5 @@
 /*
- * This file is part of the Kernel package.
+ * This file is part of the SpaceAdventures package.
  *
  * (c) Jason Schilling <jason.schilling@sourecode.de>
  *
@@ -35,7 +35,9 @@ namespace SoureCode {
 
                 Manager::StateManager *stateManager;
 
-                Manager::ResourceManager *resourceManager;
+                Manager::ResourceManager<sf::Texture> *textureManager;
+
+                Manager::ResourceManager<sf::Font> *fontManager;
 
                 float multiplier = 60.f;
 
@@ -60,7 +62,9 @@ namespace SoureCode {
 
                 Manager::StateManager *getStateManager() const;
 
-                Manager::ResourceManager *getResourceManager() const;
+                Manager::ResourceManager<sf::Texture> *getTextureManager() const;
+
+                Manager::ResourceManager<sf::Font> *getFontManager() const;
 
         };
 

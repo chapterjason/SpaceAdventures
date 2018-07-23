@@ -1,5 +1,5 @@
 /*
- * This file is part of the Kernel package.
+ * This file is part of the SpaceAdventures package.
  *
  * (c) Jason Schilling <jason.schilling@sourecode.de>
  *
@@ -37,13 +37,15 @@ namespace SoureCode {
 
                 void pop();
 
-                void draw(sf::RenderWindow *window) override;
-
                 void pause() override;
 
                 void resume() override;
 
+                void event(sf::Event event) override;
+
                 void update(float delta) override;
+
+                void draw(sf::RenderWindow *window) override;
 
 
         };

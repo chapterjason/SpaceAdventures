@@ -1,5 +1,5 @@
 /*
- * This file is part of the Kernel package.
+ * This file is part of the SpaceAdventures package.
  *
  * (c) Jason Schilling <jason.schilling@sourecode.de>
  *
@@ -39,7 +39,6 @@ namespace SoureCode {
         }
 
         void State::initialize() {
-
             this->world = new b2World(b2Vec2(0.f, 0.f));
             this->debugDraw = new Core::DebugDraw(this->game->getWindow());
 
@@ -74,7 +73,7 @@ namespace SoureCode {
 
         void State::update(float delta) {
             if (!this->paused) {
-                this->world->Step(delta, this->velocityIterations, this->positionIterations);
+                //this->world->Step(delta, this->velocityIterations, this->positionIterations);
 
                 for (std::vector<Contract::Entity*>::iterator it = this->entities.begin();
                      it != this->entities.end(); ++it) {

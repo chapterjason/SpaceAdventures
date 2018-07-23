@@ -1,5 +1,5 @@
 /*
- * This file is part of the Kernel package.
+ * This file is part of the SpaceAdventures package.
  *
  * (c) Jason Schilling <jason.schilling@sourecode.de>
  *
@@ -7,6 +7,7 @@
  * File that was distributed with this source code.
  */
 
+#include <stdexcept>
 #include "Initialable.hpp"
 
 namespace SoureCode {
@@ -14,9 +15,13 @@ namespace SoureCode {
     namespace Contract {
 
 
-        void Initialable::cleanup() {}
+        void Initialable::cleanup() {
+            throw std::logic_error("Missing implementation");
+        }
 
-        void Initialable::initialize() {}
+        void Initialable::initialize() {
+            throw std::logic_error("Missing implementation");
+        }
     }
 
 }

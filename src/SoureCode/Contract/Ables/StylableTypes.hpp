@@ -9,20 +9,17 @@
 
 #pragma once
 
-#include <SFML/Graphics.hpp>
-
 namespace SoureCode {
-
     namespace Contract {
 
-        class Drawable {
-
-            public:
-
-                virtual void draw(sf::RenderWindow *window);
-
+        enum Types {
+            STYLABLE_TYPE_INT,
+            STYLABLE_TYPE_FLOAT,
+            STYLABLE_TYPE_STRING,
+            STYLABLE_TYPE_COLOR
         };
 
     }
-
 }
+
+

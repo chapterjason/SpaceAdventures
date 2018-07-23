@@ -1,5 +1,5 @@
 /*
- * This file is part of the Kernel package.
+ * This file is part of the SpaceAdventures package.
  *
  * (c) Jason Schilling <jason.schilling@sourecode.de>
  *
@@ -10,15 +10,19 @@
 #pragma once
 
 #include "../../SoureCode/Entity/State.hpp"
+#include "../../SoureCode/UI/Button/Button.hpp"
 #include <iostream>
-
-using namespace SoureCode;
 
 namespace SpaceAdventures {
 
     namespace State {
 
         class MenuState : public Entity::State {
+            protected:
+//                Button *playButton;
+//                Button *settingsButton;
+                SoureCode::UI::Button::Button *exitButton;
+
             public:
                 MenuState(Core::Game *game);
 
@@ -29,12 +33,6 @@ namespace SpaceAdventures {
                 void initialize() override;
 
                 void cleanup() override;
-
-                void pause() override;
-
-                void resume() override;
-
-                void update(float delta) override;
 
         };
 

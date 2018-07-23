@@ -1,5 +1,5 @@
 /*
- * This file is part of the Kernel package.
+ * This file is part of the SpaceAdventures package.
  *
  * (c) Jason Schilling <jason.schilling@sourecode.de>
  *
@@ -8,13 +8,16 @@
  */
 
 
+#include <stdexcept>
 #include "Drawable.hpp"
 
 namespace SoureCode {
 
     namespace Contract {
 
-        void Drawable::draw(sf::RenderWindow *window) {}
+        void Drawable::draw(sf::RenderWindow *window) {
+            throw std::logic_error("Missing implementation");
+        }
     }
 
 }

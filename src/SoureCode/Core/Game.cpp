@@ -1,5 +1,5 @@
 /*
- * This file is part of the Kernel package.
+ * This file is part of the SpaceAdventures package.
  *
  * (c) Jason Schilling <jason.schilling@sourecode.de>
  *
@@ -28,7 +28,7 @@ namespace SoureCode {
             this->clock = new sf::Clock;
 
             this->stateManager = new Manager::StateManager();
-            this->resourceManager = new Manager::ResourceManager();
+            this->textureManager = new Manager::ResourceManager<sf::Texture>();
 
         }
 
@@ -61,7 +61,7 @@ namespace SoureCode {
             delete this->window;
             delete this->clock;
             delete this->stateManager;
-            delete this->resourceManager;
+            delete this->textureManager;
 
         }
 
@@ -90,16 +90,21 @@ namespace SoureCode {
         }
 
         sf::RenderWindow *Game::getWindow() const {
-            return window;
+            return this->window;
         }
 
         Manager::StateManager *Game::getStateManager() const {
-            return stateManager;
+            return this->stateManager;
         }
 
-        Manager::ResourceManager *Game::getResourceManager() const {
-            return resourceManager;
+        Manager::ResourceManager<sf::Texture> *Game::getTextureManager() const {
+            return this->textureManager;
         }
+
+        Manager::ResourceManager<sf::Font> *Game::getFontManager() const {
+            return this->fontManager;
+        }
+
 
     }
 

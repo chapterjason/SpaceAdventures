@@ -1,5 +1,5 @@
 /*
- * This file is part of the Kernel package.
+ * This file is part of the SpaceAdventures package.
  *
  * (c) Jason Schilling <jason.schilling@sourecode.de>
  *
@@ -7,13 +7,17 @@
  * File that was distributed with this source code.
  */
 
+#include <stdexcept>
 #include "Updatable.hpp"
 
 namespace SoureCode {
 
     namespace Contract {
 
-        void Updatable::update(float delta) {}
+        void Updatable::update(float delta) {
+
+            throw std::logic_error("Missing implementation");
+        }
 
     }
 

@@ -1,5 +1,5 @@
 /*
- * This file is part of the Kernel package.
+ * This file is part of the SpaceAdventures package.
  *
  * (c) Jason Schilling <jason.schilling@sourecode.de>
  *
@@ -14,33 +14,33 @@ namespace SpaceAdventures {
     namespace State {
 
 
-        MenuState::MenuState(Core::Game *game) : State(game) {}
+        MenuState::MenuState(Core::Game *game) : State(game) {
+
+        }
 
         void MenuState::draw(sf::RenderWindow *window) {
+            this->exitButton->draw(window);
         }
 
         void MenuState::event(sf::Event event) {
+            this->exitButton->event(event);
         }
 
         void MenuState::initialize() {
             // @todo render menu
             // @todo listen on click events
             // @todo abstract ui
-            // @todo button
 
-            std::cout << "Works!" << std::endl;
+            this->exitButton = new SoureCode::UI::Button::Button(sf::FloatRect(100.f, 100.f, 250.f, 50.f));
+
+            this->exitButton->addListener("click", [](){
+                std::cout << "test" << std::endl;
+            });
         }
 
         void MenuState::cleanup() {
-        }
-
-        void MenuState::pause() {
-        }
-
-        void MenuState::resume() {
-        }
-
-        void MenuState::update(float delta) {
+            State::cleanup();
+            delete this->exitButton;
         }
 
     }

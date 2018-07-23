@@ -1,5 +1,5 @@
 /*
- * This file is part of the Kernel package.
+ * This file is part of the SpaceAdventures package.
  *
  * (c) Jason Schilling <jason.schilling@sourecode.de>
  *
@@ -7,6 +7,7 @@
  * File that was distributed with this source code.
  */
 
+#include <stdexcept>
 #include "Pauseable.hpp"
 
 namespace SoureCode {
@@ -14,9 +15,13 @@ namespace SoureCode {
     namespace Contract {
 
 
-        void Pauseable::resume() {}
+        void Pauseable::resume() {
+            throw std::logic_error("Missing implementation");
+        }
 
-        void Pauseable::pause() {}
+        void Pauseable::pause() {
+            throw std::logic_error("Missing implementation");
+        }
     }
 
 }

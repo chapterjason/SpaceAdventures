@@ -1,5 +1,5 @@
 /*
- * This file is part of the Kernel package.
+ * This file is part of the SpaceAdventures package.
  *
  * (c) Jason Schilling <jason.schilling@sourecode.de>
  *
@@ -7,12 +7,12 @@
  * File that was distributed with this source code.
  */
 
+#include <iostream>
 #include "StateManager.hpp"
 
 namespace SoureCode {
 
     namespace Manager {
-
 
         Contract::State *StateManager::getCurrentState() {
             return this->states.back();
@@ -20,57 +20,57 @@ namespace SoureCode {
 
         void StateManager::changeState(Contract::State *state) {
             if (!this->states.empty()) {
-                this->getCurrentState()->cleanup();
-                delete this->getCurrentState();
+                this->states.back()->cleanup();
+                delete this->states.back();
                 this->states.pop_back();
             }
 
+            state->initialize();
             this->states.push_back(state);
-            this->getCurrentState()->initialize();
         }
 
         void StateManager::push(Contract::State *state) {
             if (!this->states.empty()) {
-                this->getCurrentState()->pause();
+                this->states.back()->pause();
             }
 
+            state->initialize();
             this->states.push_back(state);
-            this->getCurrentState()->initialize();
         }
 
         void StateManager::pop() {
             if (!this->states.empty()) {
-                this->getCurrentState()->cleanup();
-                delete this->getCurrentState();
+                this->states.back()->cleanup();
+                delete this->states.back();
                 this->states.pop_back();
             }
 
             if (!this->states.empty()) {
-                this->getCurrentState()->resume();
+                this->states.back()->resume();
             }
         }
 
         void StateManager::draw(sf::RenderWindow *window) {
             if (!this->states.empty()) {
-                this->getCurrentState()->draw(window);
+                this->states.back()->draw(window);
             }
         }
 
         void StateManager::pause() {
             if (!this->states.empty()) {
-                this->getCurrentState()->pause();
+                this->states.back()->pause();
             }
         }
 
         void StateManager::resume() {
             if (!this->states.empty()) {
-                this->getCurrentState()->resume();
+                this->states.back()->resume();
             }
         }
 
         void StateManager::update(float delta) {
             if (!this->states.empty()) {
-                this->getCurrentState()->update(delta);
+                this->states.back()->update(delta);
             }
         }
 
@@ -78,6 +78,12 @@ namespace SoureCode {
             for (std::vector<Contract::State*>::iterator it = this->states.begin();
                  it != this->states.end(); ++it) {
                 delete (*it);
+            }
+        }
+
+        void StateManager::event(sf::Event event) {
+            if (!this->states.empty()) {
+                this->states.back()->event(event);
             }
         }
     }

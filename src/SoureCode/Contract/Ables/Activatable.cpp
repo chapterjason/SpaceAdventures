@@ -7,22 +7,22 @@
  * File that was distributed with this source code.
  */
 
-#pragma once
-
-#include <SFML/Graphics.hpp>
+#include <stdexcept>
+#include "Activatable.hpp"
 
 namespace SoureCode {
 
     namespace Contract {
+        void Activatable::activate() {
 
-        class Drawable {
+            throw std::logic_error("Missing implementation");
 
-            public:
+        }
 
-                virtual void draw(sf::RenderWindow *window);
+        void Activatable::deactivate() {
 
-        };
+            throw std::logic_error("Missing implementation");
 
+        }
     }
-
 }

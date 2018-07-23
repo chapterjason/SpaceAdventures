@@ -9,20 +9,27 @@
 
 #pragma once
 
-#include <SFML/Graphics.hpp>
+#include <map>
 
-namespace SoureCode {
+namespace SourceCode {
+    namespace UI {
+        class Styles {
 
-    namespace Contract {
+            private:
+                Styles() {
 
-        class Drawable {
+                }
+
 
             public:
+                static Styles &getInstance() {
 
-                virtual void draw(sf::RenderWindow *window);
+                    static Styles instance;
+                    return instance;
+                }
 
         };
-
     }
-
 }
+
+

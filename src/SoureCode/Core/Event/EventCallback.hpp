@@ -9,20 +9,12 @@
 
 #pragma once
 
-#include <SFML/Graphics.hpp>
+#include <functional>
 
 namespace SoureCode {
-
-    namespace Contract {
-
-        class Drawable {
-
-            public:
-
-                virtual void draw(sf::RenderWindow *window);
-
-        };
-
+    namespace Core {
+        namespace Event {
+            typedef std::function<void()> EventCallback;
+        }
     }
-
 }

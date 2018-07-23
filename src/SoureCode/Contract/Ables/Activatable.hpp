@@ -9,20 +9,15 @@
 
 #pragma once
 
-#include <SFML/Graphics.hpp>
-
 namespace SoureCode {
 
     namespace Contract {
-
-        class Drawable {
-
+        class Activatable {
             public:
-
-                virtual void draw(sf::RenderWindow *window);
-
+                virtual void activate();
+                virtual void deactivate();
         };
-
     }
-
 }
+
+

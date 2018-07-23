@@ -7,22 +7,8 @@
  * File that was distributed with this source code.
  */
 
-#pragma once
-
-#include <SFML/Graphics.hpp>
-
-namespace SoureCode {
-
-    namespace Contract {
-
-        class Drawable {
-
-            public:
-
-                virtual void draw(sf::RenderWindow *window);
-
-        };
-
+#include "Styles.hpp"
+namespace SourceCode {
+    namespace UI {
     }
-
 }

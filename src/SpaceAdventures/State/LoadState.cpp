@@ -1,5 +1,5 @@
 /*
- * This file is part of the Kernel package.
+ * This file is part of the SpaceAdventures package.
  *
  * (c) Jason Schilling <jason.schilling@sourecode.de>
  *
@@ -23,13 +23,6 @@ namespace SpaceAdventures {
         }
 
         void LoadState::initialize() {
-
-            Manager::ResourceManager *resourceManager = this->game->getResourceManager();
-            Manager::StateManager *stateManager = this->game->getStateManager();
-
-            resourceManager->loadTexture("fighter", "./fighter.png");
-
-            stateManager->changeState(new MenuState(this->game));
         }
 
         void LoadState::cleanup() {
@@ -42,6 +35,12 @@ namespace SpaceAdventures {
         }
 
         void LoadState::update(float delta) {
+            Manager::ResourceManager<sf::Texture> *textureManager = this->game->getTextureManager();
+            Manager::StateManager *stateManager = this->game->getStateManager();
+
+            textureManager->loadResource("fighter", "./fighter.png");
+
+            stateManager->changeState(new MenuState(this->game));
         }
 
     }

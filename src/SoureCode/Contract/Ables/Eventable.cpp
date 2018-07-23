@@ -1,5 +1,5 @@
 /*
- * This file is part of the Kernel package.
+ * This file is part of the SpaceAdventures package.
  *
  * (c) Jason Schilling <jason.schilling@sourecode.de>
  *
@@ -14,7 +14,9 @@ namespace SoureCode {
     namespace Contract {
 
 
-        void Eventable::event(sf::Event event) {}
+        void Eventable::event(sf::Event event) {
+            throw std::logic_error("Missing implementation");
+        }
     }
 
 }
